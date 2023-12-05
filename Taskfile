@@ -1,0 +1,41 @@
+#!/bin/bash
+
+set -o errexit  # Exit on error
+set -o nounset  # Exit on unset variable
+set -o pipefail # Exit on pipe failure
+
+if [[ "${TRACE:-false}" == true ]]; then
+	set -o xtrace # Trace the execution of the script (debug)
+fi
+
+function up {
+	pip install .
+}
+
+function dev {
+	pip install .[dev]
+}
+
+function start {
+	python -m src
+}
+
+function default {
+	start
+}
+
+function help {
+	echo "$0 <task> <args>"
+	echo "Tasks:"
+	compgen -A function | cat -n
+}
+
+TIMEFORMAT="Task completed in %3lR"
+time "${@:-default}"
+
+trap cleanup EXIT
+cleanup() {
+	declare -ri exit_code="$?"
+	declare -r script_name="${0##*/}"
+	echo -e "\n==> ${script_name} exited with code ${exit_code}"
+}

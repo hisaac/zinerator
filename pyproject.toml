@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools", "build"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zinerator"
+version = "0.0.1"
+authors = [{name = "Isaac Halvorson", email = "hello@hisaac.net"}]
+license = {text = "MIT"}
+description = "A tool for generating a printable PDF zine from the articles in a batch of URLs."
+requires-python = ">=3.11"
+dependencies = [
+	"beautifulsoup4>=4.12.2",
+	"trafilatura>=1.6.3",
+]
+
+[project.urls]
+homepage = "https://github.com/hisaac/zinerator"
+repository = "https://github.com/hisaac/zinerator"
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[project.optional-dependencies]
+lint = [
+	"pylance",
+	"ruff",
+]
+dev = [
+	"zinerator[lint]"
+]
+
+[tool.ruff.format]
+indent-style = "tab"
