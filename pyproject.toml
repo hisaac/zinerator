@@ -5,13 +5,13 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "zinerator"
 version = "0.0.1"
-authors = [{name = "Isaac Halvorson", email = "hello@hisaac.net"}]
-license = {text = "MIT"}
+authors = [{ name = "Isaac Halvorson", email = "hello@hisaac.net" }]
+license = { text = "MIT" }
 description = "A tool for generating a printable PDF zine from the articles in a batch of URLs."
 requires-python = ">=3.11"
 dependencies = [
-	"beautifulsoup4>=4.12.2",
-	"trafilatura>=1.6.3",
+    "beautifulsoup4>=4.12.2",
+    "trafilatura>=1.6.3",
 ]
 
 [project.urls]
@@ -24,11 +24,11 @@ content-type = "text/markdown"
 
 [project.optional-dependencies]
 lint = [
-	"pylance",
-	"ruff",
+    "pylance",
+    "ruff",
 ]
 dev = [
-	"zinerator[lint]"
+    "zinerator[lint]"
 ]
 
 [tool.ruff.format]
