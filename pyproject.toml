@@ -12,6 +12,9 @@ requires-python = ">=3.11"
 dependencies = [
     "beautifulsoup4>=4.12.2",
     "trafilatura>=1.6.3",
+    "weasyprint>=60.1",
+    "pdfbook>=0.1.0",
+    "newspaper4k@git+https://github.com/AndyTheFactory/newspaper4k#egg=work-0.9.2",
 ]
 
 [project.urls]
@@ -29,6 +32,16 @@ lint = [
 ]
 dev = [
     "zinerator[lint]"
+]
+
+[tool.ruff]
+select = [
+    "E", # pycodestyle
+    "W", # pycodestyle
+    "F", # pyflakes
+    "I", # isort
+    "C4", # flake8-comprehensions
+    "TID", # flake8-tidy-imports
 ]
 
 [tool.ruff.format]
