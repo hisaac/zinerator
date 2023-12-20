@@ -2,8 +2,8 @@ import re
 import sys
 from pathlib import Path
 
+from Article import HTMLDocument
 from courlan import clean_url
-from HTMLDocument import HTMLDocument
 from trafilatura import extract, fetch_url
 from weasyprint import HTML
 

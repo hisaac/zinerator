@@ -1,0 +1,8 @@
+{
+  "name": "zinerator",
+  "author": "Isaac Halvorson <hello@hisaac.net>",
+  "license": "MIT",
+  "dependencies": {
+    "@postlight/parser": "^2.2.3"
+  }
+}
